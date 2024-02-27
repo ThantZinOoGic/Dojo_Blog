@@ -5,9 +5,9 @@ import useFetch from './useFetch';
 export default function BlogDetail() {
   let {id} = useParams();
   let navigate = useNavigate();
-  const {datas : blog, error, isPending} = useFetch('http://localhost:8000/blogs/' + id);
+  const {datas : blog, error, isPending} = useFetch('https://json-server-gamma-two.vercel.app/' + id);
   const deleteHandler = () => {
-    fetch('http://localhost:8000/blogs/' + blog.id,{
+    fetch('https://json-server-gamma-two.vercel.app/' + blog.id,{
       method : "DELETE",
       }). then(() => 
       {
