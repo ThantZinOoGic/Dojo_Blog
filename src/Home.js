@@ -2,7 +2,7 @@ import BlogList from './BlogList';
 import useFetch from './useFetch';
 
 export default function Home() {
-    const {datas, error, isPending} = useFetch('https://json-server-gamma-two.vercel.app/');
+    const {datas, error, isPending} = useFetch('https://json-server-gamma-two.vercel.app/blogs');
     return (
       <div className='home'>
         {error && <div>{error}</div>}

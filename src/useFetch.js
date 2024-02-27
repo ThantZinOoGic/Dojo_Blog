@@ -8,7 +8,6 @@ export default function useFetch(url)
 
     useEffect(()=>{
         const abortCont = new AbortController();
-        setTimeout(()=> {
             fetch(url, {signal : abortCont.signal})
             .then(res => 
                 {
@@ -29,7 +28,6 @@ export default function useFetch(url)
                     setIsPending(false);
                     setError(e.message);
             });
-        }, 2000);
         return ()=>abortCont.abort();
     }, [url]);
     return {datas, error, isPending};

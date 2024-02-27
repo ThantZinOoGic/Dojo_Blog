@@ -13,7 +13,7 @@ export default function Create ()
     e.preventDefault();
     setIsPending(true);
     const blog = {title, body, author};
-    fetch('https://json-server-gamma-two.vercel.app/', {
+    fetch('https://json-server-gamma-two.vercel.app/blogs', {
         method : "POST",
         headers : {"Content-Type" : "application-json"},
         body : JSON.stringify(blog)
